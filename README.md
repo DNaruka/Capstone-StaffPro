@@ -48,7 +48,11 @@ Second persona is individual business owners like Dentist, Salon, Contractor, PM
 
 Mockups are roughly designed but would be working on Figma later.
 
-### Data
+
+### Data![StaffproCapstoneDesign1](https://github.com/DNaruka/Capstone-StaffPro/assets/135301564/6e960c1d-56b6-426a-a266-a6d166be2b51)
+![StaffproCapstoneDesign](https://github.com/DNaruka/Capstone-StaffPro/assets/135301564/964622ad-c2f0-4451-b0ba-9ae8b165228b)
+![StaffproCapstoneDesign2](https://github.com/DNaruka/Capstone-StaffPro/assets/135301564/ecd49bf0-503d-4fd9-b1f4-2fa4e2fbd748)
+
 
 The main entities will be:
 
