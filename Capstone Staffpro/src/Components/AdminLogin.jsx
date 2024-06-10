@@ -1,25 +1,35 @@
 import React, { useState } from 'react'
 import './Login.scss'
 import axios from 'axios'
+import { useNavigate } from 'react-router-dom'
 
-const Login = () => {
+const AdminLogin = () => {
 
     const [values, setValues] = useState({
         email: '',
         password: ''
     })
-
+    const [error, setError] = useState(null)
+    const navigate = useNavigate()
+    axios.defaults.withCredentials = true;
     const handleSubmit = (event) => {
         event.preventDefault()
-        axios.post('http://localhost:3000/Login/auth/adminlogin', values)
-        .then(result => console.log(result))
+        axios.post('http://localhost:3000/auth/AdminLogin', values)
+        .then(result => {
+            if(result.data.AdminLoginStatus) {
+                localStorage.setItem("valid", true)
+                navigate('/Dashboard')
+            } else {
+                setError(result.data.Error)
+            }
+        })
         .catch(err => console.log(err))
     }
 
   return (
     <div className='loginPage'>
         <div className='loginPage__form'>
-            <h2>Login Page</h2>
+            <h2>Admin Login</h2>
             <form onSubmit={handleSubmit}>
                 <div className='loginPage__margin'>
                     <label htmlFor='email'><strong>Email:</strong></label>
@@ -40,4 +50,4 @@ const Login = () => {
   )
 }
 
-export default Login
+export default AdminLogin

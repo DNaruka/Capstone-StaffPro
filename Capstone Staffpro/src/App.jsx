@@ -1,13 +1,43 @@
-import './App.css'
+import './App.scss'
 import 'bootstrap/dist/css/bootstrap.min.css'
-import Login from './Components/Login'
+import AdminLogin from './Components/AdminLogin'
+import {BrowserRouter, Routes, Route, useNavigate} from 'react-router-dom'
+import Dashboard from './Components/Dashboard'
+import StaffProHome from './Components/StaffProHome'
+import StaffResource from './Components/StaffResource'
+import Department from './Components/Department'
+import UserProfile from './Components/UserProfile'
+import AddDepartment from './Components/AddDepartment'
+import AddStaffResource from './Components/AddStaffResource'
+import EditStaffResource from './Components/EditStaffResource'
+import StaffProFront from './Components/StaffProFront'
+import StaffResourceLogin from './Components/StaffResourceLogin'
+import StaffResourceDetail from './Components/StaffResourceDetail'
+import SecretRoute from './Components/SecretRoute'
 
 function App() {
-
   return (
-    <> 
-    <Login/>
-    </>
+    <BrowserRouter>
+    <Routes>
+      <Route path='/' element={<StaffProFront />}></Route>
+      <Route path='/Adminlogin' element={<AdminLogin />}></Route>
+      <Route path='/StaffResource_login' element={<StaffResourceLogin />}></Route>
+      <Route path='/StaffResource_detail/:id' element={<StaffResourceDetail />}></Route>
+      <Route path='/Dashboard' element={
+        <SecretRoute >
+          <Dashboard />
+        </SecretRoute>
+      }>
+        <Route path='' element={<StaffProHome />}></Route>
+        <Route path='/Dashboard/StaffResource' element={<StaffResource />}></Route>
+        <Route path='/Dashboard/Department' element={<Department />}></Route>
+        <Route path='/Dashboard/UserProfile' element={<UserProfile />}></Route>
+        <Route path='/Dashboard/add_Department' element={<AddDepartment />}></Route>
+        <Route path='/Dashboard/add_StaffResource' element={<AddStaffResource />}></Route>
+        <Route path='/Dashboard/edit_StaffResource/:id' element={<EditStaffResource />}></Route>
+      </Route>
+    </Routes>
+    </BrowserRouter>
   )
 }
 
