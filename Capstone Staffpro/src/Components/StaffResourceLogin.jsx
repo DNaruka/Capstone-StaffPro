@@ -14,7 +14,7 @@ const StaffResourceLogin = () => {
     axios.defaults.withCredentials = true;
     const handleSubmit = (event) => {
         event.preventDefault()
-        axios.post('http://localhost:3000/auth/adminlogin', values)
+        axios.post('http://localhost:3000/staffResource/login', values)
         .then(result => {
             if(result.data.StaffResourceLoginStatus) {
                 localStorage.setItem("valid", true)

@@ -21,8 +21,8 @@ function App() {
     <Routes>
       <Route path='/' element={<StaffProFront />}></Route>
       <Route path='/Adminlogin' element={<AdminLogin />}></Route>
-      <Route path='/StaffResource_login' element={<StaffResourceLogin />}></Route>
-      <Route path='/StaffResource_detail/:id' element={<StaffResourceDetail />}></Route>
+      <Route path='/StaffResourcelogin' element={<StaffResourceLogin />}></Route>
+      <Route path='/StaffResourcedetail/:id' element={<StaffResourceDetail />}></Route>
       <Route path='/Dashboard' element={
         <SecretRoute >
           <Dashboard />
@@ -32,9 +32,9 @@ function App() {
         <Route path='/Dashboard/StaffResource' element={<StaffResource />}></Route>
         <Route path='/Dashboard/Department' element={<Department />}></Route>
         <Route path='/Dashboard/UserProfile' element={<UserProfile />}></Route>
-        <Route path='/Dashboard/add_Department' element={<AddDepartment />}></Route>
-        <Route path='/Dashboard/add_StaffResource' element={<AddStaffResource />}></Route>
-        <Route path='/Dashboard/edit_StaffResource/:id' element={<EditStaffResource />}></Route>
+        <Route path='/Dashboard/addDepartment' element={<AddDepartment />}></Route>
+        <Route path='/Dashboard/addStaffResource' element={<AddStaffResource />}></Route>
+        <Route path='/Dashboard/editStaffResource/:id' element={<EditStaffResource />}></Route>
       </Route>
     </Routes>
     </BrowserRouter>

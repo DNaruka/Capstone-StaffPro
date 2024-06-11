@@ -8,7 +8,7 @@ const StaffResourceDetail = () => {
     const {id} = useParams()
     const navigate = useNavigate()
     useEffect(() => {
-        axios.get('http://localhost:3000/StaffResource/detail/'+id)
+        axios.get('http://localhost:3000/StaffResourcedetail/'+id)
         .then(result => {
             setStaffResource(result.data[0])
         })
@@ -26,7 +26,7 @@ const StaffResourceDetail = () => {
   return (
     <div>
         <div className="p-2 d-flex justify-content-center shadow">
-            <h4>Emoployee Management System</h4>
+            <h4>Staff Resource Management System</h4>
         </div>
         <div className='d-flex justify-content-center flex-column align-items-center mt-3'>
             <img src={`http://localhost:3000/Images/`+StaffResource.image} className='emp_det_image'/>

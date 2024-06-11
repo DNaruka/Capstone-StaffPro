@@ -1,7 +1,6 @@
 import axios from "axios";
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-useEffect
 
 const StaffProFront = () => {
     const navigate = useNavigate()
@@ -13,7 +12,7 @@ const StaffProFront = () => {
         if(result.data.role === "admin") {
           navigate('/Dashboard')
         } else {
-          navigate('/StaffResource_detail/'+result.data.id)
+          navigate('/StaffResourcedetail/'+result.data.id)
         }
       }
     }).catch(err =>console.log(err))
@@ -24,7 +23,7 @@ const StaffProFront = () => {
       <div className="p-3 rounded w-25 border loginForm">
         <h2 className="text-center">Select Login Type</h2>
         <div className="d-flex justify-content-between mt-5 mb-2">
-          <button type="button" className="btn btn-primary" onClick={() => {navigate('/StaffResource_login')}}>
+          <button type="button" className="btn btn-primary" onClick={() => {navigate('/StaffResourcelogin')}}>
             Staff Resource
           </button>
           <button type="button" className="btn btn-success" onClick={() => {navigate('/AdminLogin')}}>

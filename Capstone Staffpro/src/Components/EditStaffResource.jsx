@@ -39,7 +39,7 @@ const EditStaffResource = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        axios.put('http://localhost:3000/auth/edit_StaffResource/'+id, StaffResource)
+        axios.put('http://localhost:3000/auth/editStaffResource/'+id, StaffResource)
         .then(result => {
             if(result.data.Status) {
                 navigate('/dashboard/StaffResource')

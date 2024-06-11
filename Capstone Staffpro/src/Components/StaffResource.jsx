@@ -19,7 +19,7 @@ const StaffResource = () => {
       .catch((err) => console.log(err));
   }, []);
   const handleDelete = (id) => {
-    axios.delete('http://localhost:3000/auth/delete_StaffResource/'+id)
+    axios.delete('http://localhost:3000/auth/deleteStaffResource/'+id)
     .then(result => {
         if(result.data.Status) {
             window.location.reload()
@@ -33,7 +33,7 @@ const StaffResource = () => {
       <div className="d-flex justify-content-center">
         <h3>Staff Resource List</h3>
       </div>
-      <Link to="/dashboard/add_StaffResource" className="btn btn-success">
+      <Link to="/dashboard/addStaffResource" className="btn btn-success">
         Add Staff Resource
       </Link>
       <div className="mt-3">
@@ -63,7 +63,7 @@ const StaffResource = () => {
                 <td>{e.salary}</td>
                 <td>
                   <Link
-                    to={`/dashboard/edit_StaffResource/` + e.id}
+                    to={`/dashboard/editStaffResource/` + e.id}
                     className="btn btn-info btn-sm me-2"
                   >
                     Edit

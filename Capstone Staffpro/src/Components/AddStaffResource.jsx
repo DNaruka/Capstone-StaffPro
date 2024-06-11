@@ -39,7 +39,7 @@ const AddStaffResource = () => {
     formData.append('image', StaffResource.image);
     formData.append('Department_id', StaffResource.Department_id);
 
-    axios.post('http://localhost:3000/auth/add_StaffResource', formData)
+    axios.post('http://localhost:3000/auth/AddStaffResource', formData)
     .then(result => {
         if(result.data.Status) {
             navigate('/Dashboard/StaffResource')

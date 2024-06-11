@@ -40,8 +40,8 @@ const StaffProHome = () => {
       }
     })
   }
-  const salaryCount = () => {
-    axios.get('http://localhost:3000/auth/salary_count')
+  const salaryCount = async() => {
+    await axios.get('http://localhost:3000/auth/salary_count')
     .then(result => {
       if(result.data.Status) {
         setSalaryTotal(result.data.Result[0].salaryOFEmp)
@@ -65,7 +65,7 @@ const StaffProHome = () => {
         </div>
         <div className='px-3 pt-2 pb-3 border shadow-sm w-25'>
           <div className='text-center pb-1'>
-            <h4>Employee</h4>
+            <h4>Staff Resource</h4>
           </div>
           <hr />
           <div className='d-flex justify-content-between'>

@@ -7,7 +7,7 @@ import path from "path";
 
 const router = express.Router();
 
-router.post("/adminlogin", (req, res) => {
+router.post("/adminLogin", (req, res) => {
   const sql = "SELECT * from admin Where email = ? and password = ?";
   conn.query(sql, [req.body.email, req.body.password], (err, result) => {
     if (err) return res.json({ loginStatus: false, Error: "Query error" });
@@ -34,7 +34,7 @@ router.get('/Department', (req, res) => {
     })
 })
 
-router.post('/add_Department', (req, res) => {
+router.post('/addDepartment', (req, res) => {
     const sql = "INSERT INTO Department (`name`) VALUES (?)"
     conn.query(sql, [req.body.Department], (err, result) => {
         if(err) return res.json({Status: false, Error: "Query Error"})
@@ -78,7 +78,7 @@ router.post('/add_StaffResource',upload.single('image'), (req, res) => {
     })
 })
 
-router.get('/StaffResource', (req, res) => {
+router.get('/staffResource', (req, res) => {
     const sql = "SELECT * FROM StaffResource";
     conn.query(sql, (err, result) => {
         if(err) return res.json({Status: false, Error: "Query Error"})
@@ -86,7 +86,7 @@ router.get('/StaffResource', (req, res) => {
     })
 })
 
-router.get('/StaffResource/:id', (req, res) => {
+router.get('/staffResource/:id', (req, res) => {
     const id = req.params.id;
     const sql = "SELECT * FROM StaffResource WHERE id = ?";
     conn.query(sql,[id], (err, result) => {
@@ -95,7 +95,7 @@ router.get('/StaffResource/:id', (req, res) => {
     })
 })
 
-router.put('/edit_StaffResource/:id', (req, res) => {
+router.put('/editStaffResource/:id', (req, res) => {
     const id = req.params.id;
     const sql = `UPDATE StaffResource 
         set name = ?, email = ?, salary = ?, address = ?, Department_id = ? 
@@ -113,7 +113,7 @@ router.put('/edit_StaffResource/:id', (req, res) => {
     })
 })
 
-router.delete('/delete_StaffResource/:id', (req, res) => {
+router.delete('/deleteStaffResource/:id', (req, res) => {
     const id = req.params.id;
     const sql = "delete from StaffResource where id = ?"
     conn.query(sql,[id], (err, result) => {
@@ -130,7 +130,7 @@ router.get('/admin_count', (req, res) => {
     })
 })
 
-router.get('/StaffResource_count', (req, res) => {
+router.get('/staffResource_count', (req, res) => {
     const sql = "select count(id) as StaffResource from StaffResource";
     conn.query(sql, (err, result) => {
         if(err) return res.json({Status: false, Error: "Query Error"+err})
